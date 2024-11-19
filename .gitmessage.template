@@ -1,0 +1,52 @@
+
+# commit message 請遵造以下格式，並注意冒號後面有一個空格
+# 
+# <type>(<scope>): <subject> {type, subject 必要}
+# 
+# <body> {非必要}
+# 
+# <footer> {必要}
+# Mantis #<report id> {Manits 回報}
+# Complete #<report id> {Manits 修正}
+# 
+# *<Type>: commit 的類別
+# > 請遵守下列標籤
+#   - feat: 新功能
+#   - fix: 修正錯誤的變更
+#   - docs: 變更與文件相關的內容（例如 README 或 API 文檔）
+#   - style: 程式碼風格的變更（不影響功能，如空格、格式、分號等）
+#   - refactor: 程式碼重構（不修復錯誤或新增功能的變更）
+#   - perf: 性能優化
+#   - test: 增加測試代碼
+#   - build: 改變build工具
+#   - ci: 與ci相關的設定
+#   - add: 增加一些跟功能無關的檔案
+#   - 3rd: 增加第三方
+#
+# <scpoe>: commit 影響的範圍說明作用域
+#   - 如：資料庫、控制層、模板層...
+# 
+# *<Subject>: commit 的簡短描述
+#   - 不超過 50 個字元
+#   - 結尾不加句號
+#   - 盡量讓 Commit 單一化，一次只更動一個主題
+#   - 僅將第一個字母大寫
+#       - 範例: fix: Correct typo in payment calculation
+# 
+# <Body>
+# 具體的修改訊息，越詳細越好
+# 
+# <Footer>
+# 具體清參考 https://hackmd.io/@Malemow/S1sfPdi1yl
+#
+# 範例
+# 
+# featrue(Router): Change roter api url
+# 
+# https://localhost.com -> https://localhost.com:3000
+# 
+# Mantis #0000001
+# Closes #4
+# Co-authored-by: Hao Chan <hao.chan@patriotmemory.com>
+# Reviewed-by: Hao Chan <hao.chan@patriotmemory.com>
+#
