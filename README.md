@@ -17,70 +17,69 @@
 - 預設值 -> 透明度 -> 背景不透明度 50%
 - 預設值 -> 透明度 -> 啟用壓克力材料
 
-## 下載 Scoop (Windows 套件管理器)
+## Install Scoop (Windows Packge Manager)
 
 ```powershell
 iwr -useb get.scoop.sh | iex
 ```
 
-## 安裝 Git
+## Install Git
 
 ```powershell
 winget install -e --id Git.Git
 ```
 
-## Scoop 下載套件
+## Clone Project
+
+```powershell
+git clone https://github.com/Malemow/Windows-home.git ~/windows-home
+```
+
+## Install base packge `Curl` `sudo` `jq` `neovim` `gcc`
 
 ```powershell
 scoop install curl sudo jq
 scoop install neovim gcc
-scoop install oh-my-posh
-scoop install nvm
-scoop install fzf ripgrep peco mingw make # lazyvim 設定
-# scoop install go
+
 ```
 
-## 設定 Profile
+## Set Profile
 
 ```powershell
 mkdir ~/.config/powershell/
-# nvim ~/.config/powershell/user_profile.ps1
-nvim $PROFILE.CurrentUserCurrentHost
+mv ~/windows-home/user_profile.ps1 ~/.config/powershell/
+
+echo '. \$env:USERPROFILE\.config\powershell\user_profile.ps1' >> $PROFILE.CurrentUserCurrentHost
 ```
 
-- **$PROFILE.CurrentUserCurrentHost**
-
-```powershell
-. $env:USERPROFILE\.config\powershell\user_profile.ps1
-```
-
-## 下載 Oh my Posh
+## Install Oh my Posh
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser -Force
+scoop install oh-my-posh
 ```
 
-## 安裝 Node (nvm)
+## Install and use Node18 (nvm)
 
 ```powershell
+scoop install nvm
 nvm install 18
 nvm use 18
 ```
 
-## 安裝 Terminal Icons
+## Install terminal icons
 
 ```powershell
 Install-Module -Name Terminal-Icons -Repository PSGallery -Force
-Import-Module Terminal-Icons
 ```
 
-## 安裝 [z 資料夾跳轉套件](https://github.com/rupa/z)
+## Install [z `Folder Jump Packge`](https://github.com/rupa/z)
 
 ```powershell
 Install-Module -Name z -Force
 ```
 
-## 安裝 PSReadLine - Auutocompletion
+## Install PSReadLine - Autocompletion
 
 ```powershell
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
@@ -88,9 +87,10 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 ```
 
-## 設定 fzf
+## Install fzf
 
 ```powershell
+scoop install fzf ripgrep peco mingw make
 Install-Module -Name PSFzf -Scope CurrentUser -Force
 Set-PSFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineCHordReverseHistory 'Ctrl+r'
 ```
@@ -100,19 +100,28 @@ Set-PSFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineCHordReverseHistory
 ### 下載
 
 ```powershell
+scoop install ripgrep peco mingw make # lazyvim setting require packge
 git clone https://github.com/Malemow/nvim-lazyvim.git $env:LOCALAPPDATA\nvim
 ```
 
-## 下載 Rust
+## Other setting 
+
+### [git-cz](https://github.com/streamich/git-cz)
+
+```powershell
+npm install -g git-cz # 然後新增 ~/changelog.config.js
+```
+
+## Rust
 
 ```powreshell
 scoop install rustup
 rustup component add rust-analyzer
 ```
 
-## 下載 [git-cz](https://github.com/streamich/git-cz)
+## GO
 
 ```powershell
-npm install -g git-cz # 然後新增 ~/changelog.config.js
+scoop install go
 ```
 
