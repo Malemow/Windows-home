@@ -130,5 +130,6 @@ rustup component add rust-analyzer
 
 ```powershell
 scoop install go
+go install golang.org/x/tools/gopls@latest
 ```
 
