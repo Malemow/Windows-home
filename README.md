@@ -54,7 +54,7 @@ scoop install neovim gcc
 
 ```powershell
 mkdir ~/.config/powershell/
-mv ~/windows-home/user_profile.ps1 ~/.config/powershell/
+mv ~/windows-home/.config ~/
 
 echo '. \$env:USERPROFILE\.config\powershell\user_profile.ps1' >> $PROFILE.CurrentUserCurrentHost
 ```
@@ -102,16 +102,20 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 Set-PSFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineCHordReverseHistory 'Ctrl+r'
 ```
 
-## 設定 Lazyvim
-
-### 下載
+## Setting Lazyvim
 
 ```powershell
 scoop install ripgrep peco mingw make # lazyvim setting require packge
 git clone https://github.com/Malemow/nvim-lazyvim.git $env:LOCALAPPDATA\nvim
 ```
 
-## Other setting 
+## Install [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+
+```powershell
+scoop install fastfetch
+```
+
+## Other setting
 
 ### [git-cz](https://github.com/streamich/git-cz)
 
@@ -133,3 +137,6 @@ scoop install go
 go install golang.org/x/tools/gopls@latest
 ```
 
+```
+
+```
