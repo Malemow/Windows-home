@@ -23,7 +23,7 @@
 iwr -useb get.scoop.sh | iex
 ```
 
-## Install Git
+## Install git
 
 ```powershell
 winget install -e --id Git.Git
@@ -33,6 +33,13 @@ winget install -e --id Git.Git
 
 ```powershell
 git clone https://github.com/Malemow/Windows-home.git ~/windows-home
+```
+
+## Move git config
+
+```powershell
+mv ~/windows-home/.gitconfig ~/
+mv ~/windows-home/.gitmessage.template ~/
 ```
 
 ## Install base packge `Curl` `sudo` `jq` `neovim` `gcc`
